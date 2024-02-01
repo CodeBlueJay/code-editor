@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <title>Code Editor</title>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="dropdown">
+            <button class="dropbtn">File</button>
+            <div class="dropdown-content">
+                <button onclick="downloadCode()">Download</button>
+                <button onclick="saveCode()">Save</button>
+                <input type="file" id="file-input" onchange="loadFile()">
+            </div>
+        </div>
+    </div>
+
+    <div id="code-editor-container">
+        <div id="line-numbers"></div>
+        <textarea id="code-editor" class="resizable" oninput="highlightCurrentLine()"></textarea>
+    </div>
+
+    <script src="script.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCN9aCrc48b8I8QCICda6SftzITeNLDAoI",
+    authDomain: "code-editor-f2e50.firebaseapp.com",
+    projectId: "code-editor-f2e50",
+    storageBucket: "code-editor-f2e50.appspot.com",
+    messagingSenderId: "953351774419",
+    appId: "1:953351774419:web:314091064e773ea69cf426",
+    measurementId: "G-V47TM3H4FJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
